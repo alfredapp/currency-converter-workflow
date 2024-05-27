@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.vitor.currencyconverter</string>
+	<key>connections</key>
+	<dict>
+		<key>19CCA131-17BE-40E9-B2D9-C6FF97E8D958</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>956B712A-BCB8-431E-B601-9AB6A73B7DF8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A1DE79F-9EEE-4F0A-B4F0-E8ECBB7BB1D3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F00CB1B-3EB4-44D0-92CD-FF32822AAB77</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Paste to frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Convert between different currencies</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Currency Converter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Convert Currency</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>956B712A-BCB8-431E-B601-9AB6A73B7DF8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1A1DE79F-9EEE-4F0A-B4F0-E8ECBB7BB1D3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:convert_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting exchange rates…</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>convert-currency</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>{const:alfred_workflow_description}</string>
+				<key>title</key>
+				<string>{const:alfred_workflow_name}</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7F00CB1B-3EB4-44D0-92CD-FF32822AAB77</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>19CCA131-17BE-40E9-B2D9-C6FF97E8D958</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Usage
+
+Convert currencies via the `cur` keyword. Type a number to see all available currencies with their full name and code.
+
+![Typing a number](images/about/number.png)
+
+Type a currency code or name to filter.
+
+![Filtering for starting currency](images/about/eur.png)
+
+Pressing &lt;kbd&gt;↩&lt;/kbd&gt; on a partial match triggers the autocomplete. See all conversion targets when matching a unit exactly.
+
+![Showing all possible conversions](images/about/eurto.png)
+
+Type further to filter for target units. Connector words (“to”, “as”, “in”) are optional to help with readability.
+
+![Filtering for ending currency](images/about/eurtodollar.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Copy result to clipboard.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Paste result to frontmost app.
+
+Configure the [Hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/) or use the [Universal Action](https://www.alfredapp.com/help/features/universal-actions/) as shortcuts to convert results from Alfred’s [Calculator](https://www.alfredapp.com/help/features/calculator/), [Clipboard History](https://www.alfredapp.com/help/features/clipboard/), or selected text.
+
+![Universal Action](images/about/ua.png)
+
+Rates provided by [Exchange Rate API](https://www.exchangerate-api.com).</string>
+	<key>uidata</key>
+	<dict>
+		<key>19CCA131-17BE-40E9-B2D9-C6FF97E8D958</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>1A1DE79F-9EEE-4F0A-B4F0-E8ECBB7BB1D3</key>
+		<dict>
+			<key>xpos</key>
+			<real>470</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>7F00CB1B-3EB4-44D0-92CD-FF32822AAB77</key>
+		<dict>
+			<key>xpos</key>
+			<real>470</real>
+			<key>ypos</key>
+			<real>185</real>
+		</dict>
+		<key>956B712A-BCB8-431E-B601-9AB6A73B7DF8</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</key>
+		<dict>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>cur</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Convert Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>convert_keyword</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>2024.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/alfredapp/currency-converter-workflow/</string>
+</dict>
+</plist>

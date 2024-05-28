@@ -11,7 +11,9 @@ function envVar(varName) {
 function matchCurrencies(searchWord, currencies) {
   const matchingCurrencies = Object.keys(currencies).map(currencyCode => {
     if (currencyCode.toLowerCase().startsWith(searchWord)) return [currencyCode, currencies[currencyCode]]
-    if (currencies[currencyCode].coin.toLowerCase().startsWith(searchWord)) return [currencyCode, currencies[currencyCode]]
+
+    const naiveCoinPlural = currencies[currencyCode].coin.toLowerCase() + "s"
+    if (naiveCoinPlural.startsWith(searchWord)) return [currencyCode, currencies[currencyCode]]
   })
 
   return Object.fromEntries(matchingCurrencies.filter(currency => currency))
@@ -30,8 +32,7 @@ function fetchRates(ratesURL, ratesFile) {
   const cacheRecent = new Date().getTime() - cacheModDate < cacheWait
 
   if (cacheRecent) {
-    const cacheContents = $.NSString.stringWithContentsOfFileEncodingError(
-      ratesFile, $.NSUTF8StringEncoding, undefined).js
+    const cacheContents = $.NSString.stringWithContentsOfFileEncodingError(ratesFile, $.NSUTF8StringEncoding, undefined).js
     return JSON.parse(cacheContents)
   }
 

@@ -298,7 +298,7 @@ Rates provided by [Exchange Rate API](https://www.exchangerate-api.com).</string
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2024.2</string>
+	<string>2024.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/currency-converter-workflow/</string>
 </dict>

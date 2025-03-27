@@ -202,6 +202,7 @@ function fetchRates(ratesURL, ratesFile) {
     WST: "Samoan Tālā",
     XAF: "Central African Franc",
     XCD: "East Caribbean Dollar",
+    XCG: "Caribbean Guilder",
     XDR: "Special Drawing Rights",
     XOF: "West African Franc",
     XPF: "CFP Franc",

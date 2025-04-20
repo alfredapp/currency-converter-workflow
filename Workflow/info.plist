@@ -90,25 +90,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>1A1DE79F-9EEE-4F0A-B4F0-E8ECBB7BB1D3</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -154,6 +135,25 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>C4F95B0D-A7EE-46A1-B188-1EBBEA67A7BF</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1A1DE79F-9EEE-4F0A-B4F0-E8ECBB7BB1D3</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -295,6 +295,25 @@ Rates provided by [Exchange Rate API](https://www.exchangerate-api.com).</string
 			<string>textfield</string>
 			<key>variable</key>
 			<string>convert_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Include thousands separator</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Output Formatting</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>thousands_group</string>
 		</dict>
 	</array>
 	<key>version</key>

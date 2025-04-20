@@ -241,6 +241,12 @@ function run(argv) {
   const ratesURL = "https://open.er-api.com/v6/latest/USD"
   const currencies = fetchRates(ratesURL, ratesFile)
 
+  const formatter = $.NSNumberFormatter.alloc.init
+  formatter.numberStyle = $.NSNumberFormatterDecimalStyle
+  formatter.minmumFractionDigits = 0
+  formatter.maximumFractionDigits = 2
+  formatter.hasThousandSeparators = envVar("thousands_group") === "1"
+
   const interpretedInput = argv[0].replace(/ (to|in|as) /i, " ").toLowerCase()
   const rawNumber = interpretedInput.replace(/^(\d*(\.\d+)?)\D*/, "$1")
   const rawOperation = interpretedInput.substring(rawNumber.length).trim()
@@ -294,13 +300,13 @@ function run(argv) {
   return JSON.stringify({ items: Object.keys(endCurrencies).flatMap(currencyCode => {
     if (currencyCode === startCurrencyCode) return []
     const convertedValue = currencies[currencyCode].rate / startCurrencies[startCurrencyCode].rate * numberValue
-    const trimmedValue = convertedValue.toFixed(2)
+    const formattedValue = formatter.stringFromNumber(convertedValue).js
 
     return {
       uid: currencyCode,
-      title: `${trimmedValue} ${currencyCode}`,
+      title: `${formattedValue} ${currencyCode}`,
       subtitle: `${startCurrencies[startCurrencyCode].country} ${startCurrencies[startCurrencyCode].coin} → ${currencies[currencyCode].country} ${currencies[currencyCode].coin}`,
-      arg: trimmedValue,
+      arg: formattedValue,
       autocomplete: `${numberValue} ${startCurrencyCode} to ${currencyCode}`,
       icon: { path: `images/flags/${currencyCode}.png` }
     }

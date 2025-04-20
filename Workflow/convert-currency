@@ -295,10 +295,11 @@ function run(argv) {
     if (currencyCode === startCurrencyCode) return []
     const convertedValue = currencies[currencyCode].rate / startCurrencies[startCurrencyCode].rate * numberValue
     const trimmedValue = convertedValue.toFixed(2)
+    const formattedValue = new Intl.NumberFormat().format(trimmedValue)
 
     return {
       uid: currencyCode,
-      title: `${trimmedValue} ${currencyCode}`,
+      title: `${formattedValue} ${currencyCode}`,
       subtitle: `${startCurrencies[startCurrencyCode].country} ${startCurrencies[startCurrencyCode].coin} → ${currencies[currencyCode].country} ${currencies[currencyCode].coin}`,
       arg: trimmedValue,
       autocomplete: `${numberValue} ${startCurrencyCode} to ${currencyCode}`,
